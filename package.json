@@ -1,0 +1,9 @@
+{
+  "name": "sparklearn-tutor-root",
+  "version": "1.0.0",
+  "scripts": {
+    "frontend": "cd frontend && npm run dev",
+    "backend": "python backend/main.py",
+    "dev": "npm run frontend"
+  }
+}
