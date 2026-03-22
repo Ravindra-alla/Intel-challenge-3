@@ -35,9 +35,11 @@ export async function askQuestion(question: string): Promise<string> {
     return pendingRequests.get(normalizedQ)!;
   }
   
+  const API_URL = import.meta.env.VITE_API_URL || "";
+  
   // Create new request with timeout
   const requestPromise = fetchWithTimeout(
-    "/api/ask",
+    `${API_URL}/api/ask`,
     {
       method: "POST",
       headers: { 
@@ -128,8 +130,9 @@ export function generateStreamingResponse(
   
   (async () => {
     try {
+      const API_URL = import.meta.env.VITE_API_URL || "";
       const response = await fetchWithTimeout(
-        "/api/ask",
+        `${API_URL}/api/ask`,
         {
           method: "POST",
           headers: { 
